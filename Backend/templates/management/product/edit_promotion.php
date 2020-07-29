@@ -190,7 +190,7 @@
                             </div>
                             <div class="form-actions">
                                 <button type="button" class="btn btn-warning mr-1">
-                                    <a href="list.php"><i class="ft-x"></i> Cancel</a>
+                                    <a href="manage_promotion.php"><i class="ft-x"></i> Cancel</a>
                                 </button>
                                 <button type="submit" class="btn btn-primary" name="update_promotion">
                                     <i class="la la-check-square-o"></i> Update

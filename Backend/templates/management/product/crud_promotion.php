@@ -2,8 +2,18 @@
     include_once('../../../config/connect.php');
 
     // create data
+    $image_name = "";
+    $published = "";
     if (isset($_POST['create_promotion'])){
-        $id = $_POST['promotion_id'];
+        $image_name = time().'_'. $_FILES['image']['name'];
+        $destination = "../../../images/".$image_name;
+        $resultimage = move_uploaded_file($_FILES['image']['tmp_name'],$destination);
+
+        // if($resultimage){
+        //     echo $_POST['image'] = $image_name;
+        // }else{
+        //     echo 'Failed to upload image';
+        // }
         $name = $_POST['product_name'];
         $cid = $_POST['category_id'];
         $bid = $_POST['brand_id'];
@@ -14,22 +24,22 @@
         $company_id = $_POST['user_id'];
         $location = $_POST['location'];
         $phone = $_POST['phone'];
+        $_POST['published'] = isset($_POST['published']) ? 1 : 0;
+        $published = $_POST['published'];
 
-        if (empty($id) ||
-            empty($name) || 
+        if (empty($name) || 
             empty($cid) || 
             empty($bid)|| 
             empty($price) ||
             empty($discount) || 
-            empty($desc) || 
+            empty($desc) ||
             empty($sid) || 
             empty($company_id) ||
             empty($location) || 
             empty($phone)){
             $error = "Field is required !";
 
-        }elseif(!empty($id) && 
-                !empty($name) && 
+        }elseif(!empty($name) && 
                 !empty($cid) && 
                 !empty($bid) && 
                 !empty($price) && 
@@ -40,28 +50,30 @@
                 !empty($location) &&
                 !empty($phone)){
             $query = "INSERT INTO manage_promotion 
-                     (promotion_id,
-                      product_name,
+                     (product_name,
                       category_id,
                       brand_id,
                       price,
                       discount,
                       description,
+                      image,
                       size_id,
                       user_id,
                       location,
-                      phone) 
-                      VALUES ('$id',
-                              '$name',
+                      phone,
+                      published) 
+                      VALUES ('$name',
                               '$cid',
                               '$bid',
                               '$price',
                               '$discount',
                               '$desc',
+                              '$image_name',
                               '$sid',
                               '$company_id',
                               '$location',
-                              '$phone')";
+                              '$phone',
+                              '$published')";
             if (mysqli_query($conn,$query)){
                 header("location: manage_promotion.php");
             } else{
@@ -124,6 +136,7 @@
         $name = $row['product_name'];
         $cid = $row['category_id'];
         $bid = $row['brand_id'];
+        $image_name1 = $row['image'];
         $resulbrand = $conn->query("select * from brands where brand_id=$bid");
         $rowbrand = $resulbrand->fetch_array();
         $bname = $rowbrand['brand_name'];

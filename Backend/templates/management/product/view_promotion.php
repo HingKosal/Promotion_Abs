@@ -60,18 +60,18 @@
                 <!-- view promotion product by id -->
                 <div class="card-box">
                     <div class="row">
+                    <?php require_once 'crud_promotion.php' ?>
                         <div class="col-lg-5">
                             <!-- Product image -->
                             <div class="tab-content pt-0">
                                 <div class="tab-pane active show" id="product-1-item">
-                                    <img src="../../../../FrontEnd/assets/images/products/clothes/product-1.png" alt="" class="img-fluid mx-auto d-block rounded">
+                                    <img src="../../../images/<?php echo $image_name1?>" alt="" class="img-fluid mx-auto d-block rounded">
                                 </div>
                             </div>
                         </div>
                         <!-- end col -->
                         <div class="col-lg-7">
                             <div class="pl-xl-3 mt-3 mt-xl-0">
-                                <?php require_once 'crud_promotion.php' ?>
                                 <h4>Product Code: <?php echo $id;?></h4>
                                 <h2 class="mb-3 text-primary"><?php echo $name;?> (Brand <?php echo $bname;?>)</h2>
                                 <p class="text-muted float-left mr-3">

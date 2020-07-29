@@ -50,17 +50,8 @@
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        <form class="form form-horizontal" action="createpromotion.php" novalidate method="POST">
+                        <form class="form form-horizontal" action="createpromotion.php" novalidate method="POST" enctype="multipart/form-data">
                             <div class="form-body">
-                            <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="projectinput1">Promotion ID: </label>
-                                    <div class="col-md-5">
-                                        <input type="text" id="projectinput1" class="form-control" placeholder="Promotion id" name="promotion_id">
-                                        <?php if (isset($error)){ ?>
-                                            <p style="color: red"><?php echo $error?> </p>
-                                        <?php } ?>
-                                    </div>
-                                </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput1">Product Name: </label>
                                     <div class="col-md-5">
@@ -122,6 +113,14 @@
                                         <textarea name="description" id="projectinput1" cols="70" rows="4" name="description"></textarea>  
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Image: </label>
+                                    <span style="margin-left: 15px;">
+                                    <input type="file" name="image" class="text-input"></span>
+                                    <?php if (isset($error)){ ?>
+                                        <p style="color: red"><?php echo $error?> </p>
+                                    <?php } ?>
+                                </div>
                                 <div class="form-group row" >
                                     <label class="col-md-3 label-control" for="projectinput1">Size: </label>
                                         <select class="custom-select col-md-2" id="" style="margin-left:15px;" name="size_id">
@@ -167,6 +166,20 @@
                                             <p style="color: red"><?php echo $error?> </p>
                                         <?php } ?>
                                     </div>
+                                </div>
+                                <div class="form-group row" style="margin-left: 110px;">
+                                    <?php if (empty($published)):?>
+                                        <label class="col-md-3 label-control" for="projectinput1">
+                                            <input type="checkbox" name="published">
+                                            publish
+                                        </label>
+                                    <?php else: ?>
+                                        <label class="col-md-3 label-control" for="projectinput1">
+                                            <input type="checkbox" name="published" checked>
+                                            publish
+                                        </label>
+                                    <?php endif; ?>
+
                                 </div>
                             </div>
                             <div class="form-actions">

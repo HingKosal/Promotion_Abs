@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "promotion_ads";
+$dbname = "promotion_ads_lastupdate";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

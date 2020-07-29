@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2020 at 07:50 PM
+-- Generation Time: Jul 29, 2020 at 10:28 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `promotion_ads`
+-- Database: `promotion_ads_lastupdate`
 --
 
 -- --------------------------------------------------------
@@ -99,18 +99,23 @@ CREATE TABLE `manage_promotion` (
   `price` decimal(10,2) NOT NULL,
   `discount` varchar(255) NOT NULL,
   `description` longtext NOT NULL,
+  `image` varchar(255) NOT NULL,
   `size_id` char(255) DEFAULT NULL,
   `user_id` int(255) NOT NULL,
   `location` varchar(255) NOT NULL,
-  `phone` varchar(50) NOT NULL
+  `phone` varchar(50) NOT NULL,
+  `published` tinyint(4) NOT NULL,
+  `create_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `manage_promotion`
 --
 
-INSERT INTO `manage_promotion` (`promotion_id`, `product_name`, `category_id`, `brand_id`, `price`, `discount`, `description`, `size_id`, `user_id`, `location`, `phone`) VALUES
-(1001, 'Jack & Jones Men T-shirt (Blue)', '1', '1', '15.00', '50', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100');
+INSERT INTO `manage_promotion` (`promotion_id`, `product_name`, `category_id`, `brand_id`, `price`, `discount`, `description`, `image`, `size_id`, `user_id`, `location`, `phone`, `published`, `create_date`) VALUES
+(1001, 'Jack & Jones Men T-shirt (Blue)', '1', '1', '15.00', '50', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', 'product-1.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 0, '2020-07-29 14:59:06'),
+(1013, 'Jack & Jones Men T-shirt (Red)', '1', '1', '12.00', '50', 'test', '1596009664-product-2.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 15:06:33'),
+(1014, 'Jack & Jones Men T-shirt (Green)', '1', '2', '15.00', '30', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', '1596011274_product-7.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 15:27:54');
 
 -- --------------------------------------------------------
 
@@ -235,6 +240,12 @@ ALTER TABLE `size`
 --
 
 --
+-- AUTO_INCREMENT for table `manage_promotion`
+--
+ALTER TABLE `manage_promotion`
+  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1015;
+
+--
 -- AUTO_INCREMENT for table `manage_user`
 --
 ALTER TABLE `manage_user`
@@ -255,10 +266,7 @@ ALTER TABLE `companies`
 -- Constraints for table `manage_promotion`
 --
 ALTER TABLE `manage_promotion`
-  ADD CONSTRAINT `brandidpk` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`brand_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `catagorypk` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `sizeidpk` FOREIGN KEY (`size_id`) REFERENCES `size` (`size_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `userpk` FOREIGN KEY (`user_id`) REFERENCES `companies` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `sizeidpk` FOREIGN KEY (`size_id`) REFERENCES `size` (`size_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
