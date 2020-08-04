@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2020 at 05:08 PM
+-- Generation Time: Aug 04, 2020 at 10:11 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -114,11 +114,30 @@ CREATE TABLE `manage_promotion` (
 --
 
 INSERT INTO `manage_promotion` (`promotion_id`, `product_name`, `category_id`, `brand_id`, `price`, `discount`, `description`, `image`, `size_id`, `user_id`, `location`, `phone`, `published`, `create_date`) VALUES
-(1001, 'Jack & Jones Men T-shirt (Blue)', '1', '1', '15.00', '99', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', 'product-1.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 0, '2020-07-31 19:12:10'),
-(1013, 'Jack & Jones Men T-shirt (Red)', '1', '1', '12.00', '50', 'test', '1596009664-product-2.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 15:06:33'),
-(1014, 'Jack & Jones Men T-shirt (Green)', '1', '2', '20.00', '30', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', '1596011274_product-7.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 18:12:05'),
-(1015, 'test', '1', '1', '12.00', '50', 'ss', '1596023030_product-8.png', '001', 9, 'Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 18:43:50'),
-(1016, 'Purple T Shirt', '1', '1', '15.00', '30', 'nice close', '1596549476_product-6.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-04 20:57:56');
+(1019, 'Blue T Shirt', '1', '1', '12.00', '50', 'testing', '1596566899_product-9.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 01:48:19'),
+(1020, 'High End', '1', '1', '15.00', '40', 'test', '1596568859_product-2.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:20:59'),
+(1021, 'Amazing Modern Chair', '1', '1', '15.00', '50', 'test', '1596569118_product-3.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:25:18'),
+(1022, 'Designer Awesome Chair', '1', '1', '15.00', '25', 'test', '1596569150_product-4.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:25:50'),
+(1023, 'The butterfly chair', '1', '1', '10.00', '10', 'test', '1596569203_product-5.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:26:43'),
+(1024, 'Dining Chairs', '1', '1', '13.00', '20', 'test', '1596569248_product-6.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:27:28'),
+(1025, 'Plastic Armchair', '1', '1', '14.00', '35', 'test', '1596569288_product-7.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:28:08'),
+(1026, 'Wing Chairs', '1', '1', '16.00', '30', 'test', '1596569330_product-8.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:28:50'),
+(1027, 'Black-Converse-Shoes', '2', '1', '20.00', '20', 'test', '1596569425_Black-Converse-Shoes-PNG-HD.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:30:25'),
+(1028, 'Biblio Converse-Shoes', '2', '1', '35.00', '40', 'test', '1596569596_Converse-Shoes-PNG-Background-Image.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:33:16'),
+(1029, 'Modern Converse-Shoes', '2', '1', '25.00', '50', 'test', '1596569649_Converse-Shoes-PNG-Picture.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:34:09'),
+(1030, 'Designer Converse', '2', '1', '16.00', '35', 'test', '1596569706_Converse-Shoes-PNG-Transparent.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:35:06'),
+(1031, 'Vector-Shoes', '2', '2', '26.00', '25', 'test', '1596569766_Vector-Shoes.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:36:06'),
+(1032, 'Dining Dance_Shoes', '2', '3', '30.00', '50', 'test', '1596569811_Dance_Shoes.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:36:51'),
+(1033, 'Plastic Dance-Shoes', '2', '1', '26.00', '60', 'test', '1596569864_Dance-Shoes-PNG-File.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:37:44'),
+(1034, 'Wing Dance', '2', '3', '30.00', '25', 'test', '1596569913_Dance-Shoes.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:38:33'),
+(1035, 'ADATA-Sync-Charge', '3', '1', '25.00', '40', 'test', '1596569995_ADATA-Sync-Charge-Lightning-Cable-Series-Launched-400x400.jpg', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:39:55'),
+(1036, 'Modern Keyboard', '3', '1', '10.00', '25', 'test', '1596570037_20150511143626_514521-200x200.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:40:37'),
+(1037, 'c615-gallery', '3', '1', '17.00', '36', 'test', '1596570076_c615-gallery-200x200.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:41:16'),
+(1038, 'Dell Gaming', '3', '1', '36.00', '40', 'test', '1596570132_dell gaming backpack-200x200.jpg', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:42:12'),
+(1039, 'MouseM11-1', '3', '1', '34.00', '25', 'test', '1596570184_g603-lightspeed-wireless-gaming-mouse-200x200.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:43:04'),
+(1040, 'M10-1', '3', '1', '36.00', '40', 'test', '1596570218_M10-1-400x400.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:43:38'),
+(1041, 'apple-magic-mouse', '3', '1', '15.00', '30', 'test', '1596570254_mla02za-apple-magic-mouse-2-400x400.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:45:57'),
+(1042, 'Pen Surface', '3', '1', '15.00', '50', 'test', '1596570286_Pen surface-200x200.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:44:46');
 
 -- --------------------------------------------------------
 
@@ -247,7 +266,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT for table `manage_promotion`
 --
 ALTER TABLE `manage_promotion`
-  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1017;
+  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1044;
 
 --
 -- AUTO_INCREMENT for table `manage_user`

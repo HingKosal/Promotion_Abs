@@ -1,7 +1,7 @@
 <?php
     include_once ('../config/connect.php');
-    $query = " select * from categories";
-    $result = $conn->query($query);
+    // $query = " select * from manage_promotion where published=1";
+    // $result = $conn->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,8 @@
                         </div> <!-- end card-box -->
                     </div> <!-- end col-->
                 </div>
-
+            </div>
+            <div class="container-fluid">
                 <!-- end row-->
                 <div class="row">
                     <div class="col-12">
@@ -104,241 +105,46 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-9-1.jpg" alt="product-pic" class="img-fluid">
-                            </div>
+                    <?php
+                        $query = " select * from manage_promotion where published=1 and category_id=1";
+                        $result = $conn->query($query);
+                        if(mysqli_num_rows($result) > 0){
+                        while($row=mysqli_fetch_array($result)){
+                            echo '<div class="col-md-6 col-xl-3">';
+                            echo '<a href="view_promotion.php?view='.$row['promotion_id'].'">';
+                                echo '<div class="card-box product-box">';
+                                    echo '<div class="bg-light">';
+                                        echo '<img src="../../Backend/images/'.$row['image'].'"'.'alt="product-pic" class="img-fluid">';
+                                    echo '</div>';
 
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <?php
-                                            while($row=mysqli_fetch_assoc($result))
-                                            {
-                                                $title = $row['title'];
-                                                ?>
-                                                <h5 class="font-16 mt-0 sp-line-1"><a href="product_detail.php" class="text-dark"><?php echo $title ?></a> </h5>
-                                                <?php
-                                            }
-                                        ?>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 98 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">20 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-2.png" alt="product-pic" class="img-fluid">
-                            </div>
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">high end</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 23 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">40 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-3.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Amazing Modern Chair</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 235 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">50 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-4.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Designer Awesome Chair</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">>
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 385 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">25 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
+                                    echo '<div class="product-info">';
+                                        echo '<div class="row align-items-center">';
+                                            echo '<div class="col">';
+                                                echo '<h5 class="font-16 mt-0 sp-line-1"><a href="view_promotion.php?view='.$row['promotion_id'].'"'.' class="text-dark">'.$row['product_name'].'</a> </h5>';
+                                                echo '<div class="text-warning mb-2 font-13">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                echo '</div>';
+                                                echo '<h5 class="m-0"> <span class="text-muted"> Code :'.$row['promotion_id'].'</span></h5>';
+                                            echo '</div>';
+                                            echo '<div class="col-auto">';
+                                                echo '<h4 class="text-danger text-uppercase">'.$row['discount'].' % Off</h4>';
+                                            echo '</div>';
+                                        echo '</div> <!-- end row -->';
+                                    echo '</div> <!-- end product info-->';
+                                echo '</div> <!-- end card-box-->';
+                            echo '</a>';
+                            echo '</div> <!-- end col-->';
+                        }
+                    }
+                    ?>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-5.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">The butterfly chair</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 25 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">10 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-6.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Dining Chairs</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 39 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">20 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-7.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Plastic Armchair</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 36 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">35 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/clothes/product-8.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Wing Chairs</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 128 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">30 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-                </div>
-                <!-- end row-->
             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
-        </div>
             <div class="container-fluid">
-                <!-- start page title -->
+                <!-- end row-->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
@@ -346,229 +152,45 @@
                         </div>
                     </div>
                 </div>
-                <!-- end page title -->
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Black-Converse-Shoes-PNG-HD.png" alt="product-pic" class="img-fluid">
-                            </div>
+                    <?php
+                        $query = " select * from manage_promotion where published=1 and category_id=2";
+                        $result = $conn->query($query);
+                        if(mysqli_num_rows($result) > 0){
+                        while($row=mysqli_fetch_array($result)){
+                            echo '<div class="col-md-6 col-xl-3">';
+                            echo '<a href="view_promotion.php?view='.$row['promotion_id'].'">';
+                                echo '<div class="card-box product-box">';
+                                    echo '<div class="bg-light">';
+                                        echo '<img src="../../Backend/images/'.$row['image'].'"'.'alt="product-pic" class="img-fluid">';
+                                    echo '</div>';
 
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Black-Converse-Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 98 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">20 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Converse-Shoes-PNG-Background-Image.png" alt="product-pic" class="img-fluid">
-                            </div>
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="" class="text-dark">Biblio Converse-Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 23 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">40 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Converse-Shoes-PNG-Picture.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Modern Converse-Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 235 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">50 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Converse-Shoes-PNG-Transparent.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Designer Converse Awesome</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 385 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">30 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
+                                    echo '<div class="product-info">';
+                                        echo '<div class="row align-items-center">';
+                                            echo '<div class="col">';
+                                                echo '<h5 class="font-16 mt-0 sp-line-1"><a href="view_promotion.php?view='.$row['promotion_id'].'"'.' class="text-dark">'.$row['product_name'].'</a> </h5>';
+                                                echo '<div class="text-warning mb-2 font-13">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                echo '</div>';
+                                                echo '<h5 class="m-0"> <span class="text-muted"> Code :'.$row['promotion_id'].'</span></h5>';
+                                            echo '</div>';
+                                            echo '<div class="col-auto">';
+                                                echo '<h4 class="text-danger text-uppercase">'.$row['discount'].' % Off</h4>';
+                                            echo '</div>';
+                                        echo '</div> <!-- end row -->';
+                                    echo '</div> <!-- end product info-->';
+                                echo '</div> <!-- end card-box-->';
+                                echo '</a>';
+                            echo '</div> <!-- end col-->';
+                        }
+                    }
+                    ?>
                 </div>
-                <!-- end row-->
-                <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Vector-Shoes.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Vector-Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 25 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">25 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products//shoes/Dance_Shoes.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Dining Dance_Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 39 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">35 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Dance-Shoes-PNG-File.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Plastic Dance-Shoes</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 36 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">50 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/shoes/Dance-Shoes.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="ecommerce-product-detail.html" class="text-dark">Wing Dance</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 128 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">70 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-                </div>
-                <!-- end row-->
-
             </div>
-
             <div class="container-fluid">
                 <!-- end row-->
                 <div class="row">
@@ -579,221 +201,42 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/ADATA-Sync-Charge-Lightning-Cable-Series-Launched-400x400.jpg" alt="product-pic" class="img-fluid">
-                            </div>
+                    <?php
+                        $query = " select * from manage_promotion where published=1 and category_id=3";
+                        $result = $conn->query($query);
+                        if(mysqli_num_rows($result) > 0){
+                        while($row=mysqli_fetch_array($result)){
+                            echo '<a href="view_promotion.php?view='.$row['promotion_id'].'">';
+                            echo '<div class="col-md-6 col-xl-3">';
+                                echo '<div class="card-box product-box">';
+                                    echo '<div class="bg-light">';
+                                        echo '<img src="../../Backend/images/'.$row['image'].'"'.'alt="product-pic" class="img-fluid">';
+                                    echo '</div>';
 
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">ADATA-Sync-Charge-Lightning-Cable-Series</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 98 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">20 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/20150511143626_514521-200x200.jpg" alt="product-pic" class="img-fluid">
-                            </div>
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Modern Keyboard</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 23 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">40 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/c615-gallery-200x200.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">c615-gallery</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 235 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">50 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/dell%20gaming%20backpack-200x200.jpg" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Dell Gaming </a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">>
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 385 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">25 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/g603-lightspeed-wireless-gaming-mouse-200x200.png" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark"lightspeed-wireless-gaming-mouse</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 25 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">10 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/M10-1-400x400.jpg" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">M10-1</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 39 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">20 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/mla02za-apple-magic-mouse-2-400x400.jpg" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">apple-magic-mouse</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 36 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">35 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
-
-                    <div class="col-md-6 col-xl-3">
-                        <div class="card-box product-box">
-                            <div class="bg-light">
-                                <img src="../assets/images/products/accessories/Pen%20surface-200x200.jpg" alt="product-pic" class="img-fluid">
-                            </div>
-
-                            <div class="product-info">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h5 class="font-16 mt-0 sp-line-1"><a href="#" class="text-dark">Pen Surface</a> </h5>
-                                        <div class="text-warning mb-2 font-13">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                            <img src="../assets/images/star.png" alt="product-pic" class="img-fluid">
-                                        </div>
-                                        <h5 class="m-0"> <span class="text-muted"> Stocks : 128 pcs</span></h5>
-                                    </div>
-                                    <div class="col-auto">
-                                        <h4 class="text-danger text-uppercase">30 % Off</h4>
-                                    </div>
-                                </div> <!-- end row -->
-                            </div> <!-- end product info-->
-                        </div> <!-- end card-box-->
-                    </div> <!-- end col-->
+                                    echo '<div class="product-info">';
+                                        echo '<div class="row align-items-center">';
+                                            echo '<div class="col">';
+                                                echo '<h5 class="font-16 mt-0 sp-line-1"><a href="view_promotion.php?view='.$row['promotion_id'].'"'.' class="text-dark">'.$row['product_name'].'</a> </h5>';
+                                                echo '<div class="text-warning mb-2 font-13">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                    echo '<img src="../assets/images/star.png" alt="product-pic" class="img-fluid">';
+                                                echo '</div>';
+                                                echo '<h5 class="m-0"> <span class="text-muted"> Code :'.$row['promotion_id'].'</span></h5>';
+                                            echo '</div>';
+                                            echo '<div class="col-auto">';
+                                                echo '<h4 class="text-danger text-uppercase">'.$row['discount'].' % Off</h4>';
+                                            echo '</div>';
+                                        echo '</div> <!-- end row -->';
+                                    echo '</div> <!-- end product info-->';
+                                echo '</div> <!-- end card-box-->';
+                                echo '</a>';
+                            echo '</div> <!-- end col-->';
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -816,9 +259,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </div> <!-- end col-->
+                    </div>
                 </div>
-                <!-- end row-->
             </div>
 
             <!-- ============================================================== -->
