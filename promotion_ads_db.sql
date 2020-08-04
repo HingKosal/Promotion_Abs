@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2020 at 10:28 AM
+-- Generation Time: Aug 04, 2020 at 05:08 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -62,7 +62,8 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`category_id`, `title`, `description`) VALUES
 ('1', 'Clothes', ''),
 ('2', 'Shoes', ''),
-('3', 'Accessories', '');
+('3', 'Accessories', ''),
+('4', 'Beauty', '');
 
 -- --------------------------------------------------------
 
@@ -113,9 +114,11 @@ CREATE TABLE `manage_promotion` (
 --
 
 INSERT INTO `manage_promotion` (`promotion_id`, `product_name`, `category_id`, `brand_id`, `price`, `discount`, `description`, `image`, `size_id`, `user_id`, `location`, `phone`, `published`, `create_date`) VALUES
-(1001, 'Jack & Jones Men T-shirt (Blue)', '1', '1', '15.00', '50', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', 'product-1.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 0, '2020-07-29 14:59:06'),
+(1001, 'Jack & Jones Men T-shirt (Blue)', '1', '1', '15.00', '99', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', 'product-1.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 0, '2020-07-31 19:12:10'),
 (1013, 'Jack & Jones Men T-shirt (Red)', '1', '1', '12.00', '50', 'test', '1596009664-product-2.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 15:06:33'),
-(1014, 'Jack & Jones Men T-shirt (Green)', '1', '2', '15.00', '30', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', '1596011274_product-7.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 15:27:54');
+(1014, 'Jack & Jones Men T-shirt (Green)', '1', '2', '20.00', '30', 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.', '1596011274_product-7.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 18:12:05'),
+(1015, 'test', '1', '1', '12.00', '50', 'ss', '1596023030_product-8.png', '001', 9, 'Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-07-29 18:43:50'),
+(1016, 'Purple T Shirt', '1', '1', '15.00', '30', 'nice close', '1596549476_product-6.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-04 20:57:56');
 
 -- --------------------------------------------------------
 
@@ -137,7 +140,8 @@ CREATE TABLE `manage_user` (
 --
 
 INSERT INTO `manage_user` (`user_id`, `first_name`, `last_name`, `username`, `email`, `password`) VALUES
-(9, 'System', 'Admin', 'System Admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+(9, 'System', 'Admin', 'System Admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(10, 'Kosal', 'Hing', 'Hkosal', 'kosal@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
 
 -- --------------------------------------------------------
 
@@ -243,13 +247,13 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT for table `manage_promotion`
 --
 ALTER TABLE `manage_promotion`
-  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1015;
+  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1017;
 
 --
 -- AUTO_INCREMENT for table `manage_user`
 --
 ALTER TABLE `manage_user`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

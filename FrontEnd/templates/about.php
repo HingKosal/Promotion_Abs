@@ -67,12 +67,165 @@
 <!--            <img src="../assets/images/small/ya.jpg" alt="image" class="img-fluid rounded-circle" width="20%" title="Kong Sreya">-->
 <!--            <img src="../assets/images/small/theng.jpg" alt="image" class="img-fluid rounded-circle" width="20%" title="Chhorn Soktheng">-->
             <p class="text-secondary">
-                The PromotionAds is created by <a href="#" class="overlay"> Hing kosal </a> <a href="#"> Kong Sreya </a> and <a href="#"> Chhorn Soktheng </a>. We are web developer students at University of Puthisastra.
+                The PromotionAds is created by <a href="#" class="overlay"> Hing kosal </a> , <a href="#"> Kong Sreya </a> and <a href="#"> Chhorn Soktheng </a>. We are web developer students at University of Puthisastra.
                 The PromotinAds is a topic of project that we chose to design. The PromotionAds is a website that shows all promotion product around town.
                 Users can view to the whole pages to see the promotion product that they want to buy. Once they see the products they like to purchase, they
                 can click on the view more button to see all information related to the product. Also, they will be able to contact the product owners to purchase.
             </p>
         </div>
+        <div class="col-lg-12">
+            <div class="row d-lg-table-cell">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 col-md-6">
+                                    <h3 class="mb-0 text-truncated">Hing Kosal</h3>
+                                    <p class="lead">Data Analysis</p>
+                                    <ul class="list-inline ratings text-center" title="Ratings">
+                                        <li class="list-inline-item "><a href="#"><span class="fa fa-star "></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Im a programming year 3 student at University of Puthisastra.
+                                    </p>
+                                    <p> <span class="badge badge-info tags">MySQL</span>
+                                        <span class="badge badge-info tags">Oracle</span>
+                                        <span class="badge badge-info tags">ER Model</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-4 text-center">
+                                    <img src="../assets/images/small/Kosal.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">20.7K</h3>
+                                    <small>Followers</small>
+                                    <button class="btn btn-block btn-outline-success"><span class="fa fa-user"></span> Facebook</button>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">245</h3>
+                                    <small>Following</small>
+                                    <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> Instagram</button>
+                                </div>
+
+                                <!--/col-->
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                </div>
+            </div>
+            <div class="row d-lg-table-cell">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 col-md-6">
+                                    <h3 class="mb-0 text-truncated">Kong Sreya</h3>
+                                    <p class="lead">Web / UI Design</p>
+                                    <ul class="list-inline ratings text-center" title="Ratings">
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Im a programming year 3 student at University of Puthisastra.
+                                    </p>
+                                    <p> <span class="badge badge-info tags">PHP</span>
+                                        <span class="badge badge-info tags">Laravel</span>
+                                        <span class="badge badge-info tags">MySQL</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 text-center">
+                                    <img src="../assets/images/small/Ya.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">20.7K</h3>
+                                    <small>Followers</small>
+                                    <button class="btn btn-block btn-outline-success"><span class="fa fa-user"></span> Facebook</button>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">245</h3>
+                                    <small>Following</small>
+                                    <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> Tik Tok</button>
+                                </div>
+
+                                <!--/col-->
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                </div>
+            </div>
+            <div class="row d-lg-table-cell">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-8 col-md-6">
+                                    <h3 class="mb-0 text-truncated">Chhorn Soktheng</h3>
+                                    <p class="lead">Web / UI Design</p>
+                                    <ul class="list-inline ratings text-center col-12" title="Ratings">
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                        <li class="list-inline-item"><a href="#"><span class="fa fa-star"></span></a>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Im a programming year 3 student at University of Puthisastra.
+                                    </p>
+                                    <p> <span class="badge badge-info tags">PHP</span>
+                                        <span class="badge badge-info tags">Laravel</span>
+                                        <span class="badge badge-info tags">MySQL</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 col-md-6 text-center">
+                                    <img src="../assets/images/small/Theng.jpg" alt="" class="mx-auto rounded-circle img-fluid">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">20.7K</h3>
+                                    <small>Followers</small>
+                                    <button class="btn btn-block btn-outline-success"><span class="fa fa-user"></span> Facebook</button>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="mb-0">245</h3>
+                                    <small>Following</small>
+                                    <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span> Twitter</button>
+                                </div>
+
+                                <!--/col-->
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- ============================================================== -->

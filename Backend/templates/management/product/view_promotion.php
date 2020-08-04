@@ -87,13 +87,21 @@
                                 <h4><span class="badge bg-soft-success text-success mb-4">Instock</span></h4>
                                 <p class="text-muted mb-4"><?php echo $desc;?></p>
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div>
-                                            <p class="text-muted"> Size: <?php echo $sizename;?></p>
-                                            <p class="text-muted"> Company: <?php echo $companyname;?></p>
-                                            <p class="text-muted">Location: <?php echo $location;?></p>
-                                            <p class="text-muted">Contact: (+855) <?php echo $phone;?></p>
-                                            </div>
+                                            <p class="text-muted">
+                                                <a href="#" class="text-secondary font-weight-bold font-medium-2" > SIZE : </a><?php echo $sizename;?>
+                                            </p>
+                                            <p class="text-muted">
+                                                <a href="#" class="text-secondary font-weight-bold font-medium-2" > COMPANY : </a><?php echo $companyname;?>
+                                            </p>
+                                            <p class="text-muted">
+                                                <a href="#" class="text-secondary font-weight-bold font-medium-2" > LOCATION : </a><?php echo $location;?>
+                                            </p>
+                                            <p class="text-muted">
+                                                <a href="#" class="text-secondary font-weight-bold font-medium-2" > CONTACT : </a>(+855) <?php echo $phone;?>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div>

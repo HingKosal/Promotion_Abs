@@ -1,3 +1,27 @@
+<?php
+    include_once('../config/connect.php');
+
+    // create data
+    if (isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $msg = $_POST['message'];
+
+        if (empty($name) || empty($email)|| empty($msg)){
+            $error = "Field is required !";
+        }elseif(!empty($name) && !empty($email)&& !empty($msg)){
+            $query = "INSERT INTO messages (full_name,email,message) VALUES ('$name','$email','$msg')";
+            if (mysqli_query($conn,$query)){
+                header("location: contact.php");
+            } else{
+                echo 'query error: ' .mysqli_error($conn);
+            }
+        }
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,19 +97,29 @@
             </div>
             <div class="message">
                 <h2 class="text-success">Leave Us A Message</h2>
-                <form method="post" action="#">
+                <form method="post" action="contact.php">
                     <div class="form-group">
                         <label class="text-info" for="name">Full Name:</label>
-                        <input type="text" class="form-control" name="name" value="" placeholder="enter your full name....." require>
+                        <input type="text" class="form-control" name="name" value="" placeholder="enter your full name.....">
+                        <?php if (isset($error)){ ?>
+                            <label style="color: red; margin-left: 300px;"><?php echo $error?> </label>
+                        <?php } ?>
 
                     </div>
                     <div class="form-group">
                         <label class="text-info" for="email">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="enter your email....." require>
+                        <input type="email" class="form-control" name="email" placeholder="enter your email.....">
+                            <?php if (isset($error)){ ?>
+                                <label style="color: red; margin-left: 300px;"><?php echo $error?> </label>
+                            <?php } ?>
+
                     </div>
                     <div class="form-group">
                         <label class="text-info" for="message">Message</label>
-                        <textarea class="text-info" name="message" class="form-control" placeholder="tell us your interest/any issue....." cols="30" rows="4" require></textarea>
+                        <textarea class="text-info" name="message" class="form-control" placeholder="tell us your interest/any issue....." cols="30" rows="4"></textarea>
+                        <?php if (isset($error)){ ?>
+                            <label style="color: red; margin-left: 300px;"><?php echo $error?> </label>
+                        <?php } ?>
 
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
