@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2020 at 10:11 PM
+-- Generation Time: Aug 11, 2020 at 06:13 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -63,7 +63,7 @@ INSERT INTO `categories` (`category_id`, `title`, `description`) VALUES
 ('1', 'Clothes', ''),
 ('2', 'Shoes', ''),
 ('3', 'Accessories', ''),
-('4', 'Beauty', '');
+('4', 'Beautys', '');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ CREATE TABLE `manage_promotion` (
 --
 
 INSERT INTO `manage_promotion` (`promotion_id`, `product_name`, `category_id`, `brand_id`, `price`, `discount`, `description`, `image`, `size_id`, `user_id`, `location`, `phone`, `published`, `create_date`) VALUES
-(1019, 'Blue T Shirt', '1', '1', '12.00', '50', 'testing', '1596566899_product-9.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 01:48:19'),
+(1019, 'Blue T Shirt', '1', '1', '12.00', '50', 'testing', '1596566899_product-9.jpg', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-11 22:48:39'),
 (1020, 'High End', '1', '1', '15.00', '40', 'test', '1596568859_product-2.png', '002', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:20:59'),
 (1021, 'Amazing Modern Chair', '1', '1', '15.00', '50', 'test', '1596569118_product-3.png', '003', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:25:18'),
 (1022, 'Designer Awesome Chair', '1', '1', '15.00', '25', 'test', '1596569150_product-4.png', '001', 9, 'Phnom Penh, less than 1 km from Tuol Sleng Genocide Museum and 1.1 km from Royal Palace Phnom Penh', '969604049 / 66280228 / 129966100', 1, '2020-08-05 02:25:50'),
@@ -160,7 +160,9 @@ CREATE TABLE `manage_user` (
 
 INSERT INTO `manage_user` (`user_id`, `first_name`, `last_name`, `username`, `email`, `password`) VALUES
 (9, 'System', 'Admin', 'System Admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
-(10, 'Kosal', 'Hing', 'Hkosal', 'kosal@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+(10, 'Kosal', 'Hing', 'Hkosal', 'kosal@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(11, 'Fristname', 'LastName', 'user1', 'user@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(12, 'first', 'last', 'kosal', 'user1@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
 
 -- --------------------------------------------------------
 
@@ -266,13 +268,13 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT for table `manage_promotion`
 --
 ALTER TABLE `manage_promotion`
-  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1044;
+  MODIFY `promotion_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1047;
 
 --
 -- AUTO_INCREMENT for table `manage_user`
 --
 ALTER TABLE `manage_user`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -282,14 +284,17 @@ ALTER TABLE `manage_user`
 -- Constraints for table `companies`
 --
 ALTER TABLE `companies`
-  ADD CONSTRAINT `provincepk` FOREIGN KEY (`province`) REFERENCES `provinces` (`province_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `useridpk` FOREIGN KEY (`user_id`) REFERENCES `manage_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `provincepk` FOREIGN KEY (`province`) REFERENCES `provinces` (`province_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `useridpk` FOREIGN KEY (`user_id`) REFERENCES `manage_user` (`user_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `manage_promotion`
 --
 ALTER TABLE `manage_promotion`
-  ADD CONSTRAINT `sizeidpk` FOREIGN KEY (`size_id`) REFERENCES `size` (`size_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `branchpk` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`brand_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `categorypk` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `companypk` FOREIGN KEY (`user_id`) REFERENCES `companies` (`user_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `sizeidpk` FOREIGN KEY (`size_id`) REFERENCES `size` (`size_id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
